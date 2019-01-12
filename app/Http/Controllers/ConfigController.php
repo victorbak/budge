@@ -23,6 +23,10 @@ class ConfigController extends Controller
      */
     public function index()
     {
-        return view('config');
+        return view('config.config');
+    }
+
+    public function update(Request $request) {
+        dd($request);
     }
 }
