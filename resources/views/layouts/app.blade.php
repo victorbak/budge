@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -29,7 +30,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        <h4>{{ config('app.name', 'Laravel') }}</h4>
                     </a>
                 </div>
 
@@ -43,32 +44,32 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('login') }}"><h4 id="nav-login">Login</h4></a></li>
+                            <li><a href="{{ route('register') }}"><h4 id="nav-register">Register</h4></a></li>
                         @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                            <!-- <li class="dropdown"> -->
+                                <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     {{ Auth::user()->username }} <span class="caret"></span>
                                 </a>
 
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('config') }}">Configure</a>
-                                        <a href="{{ route('bills') }}">Add Bills</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('logout') }}"
+                                <ul class="dropdown-menu"> -->
+                                    <!-- <li><a href="{{ route('config') }}">Configure</a></li> -->
+                                    <li><a href="{{ route('home') }}"><h4 id="nav-home">Home</h4></a></li>
+                                    <li><a href="{{ route('pay') }}"><h4 id="nav-list">My Bills</h4></a></li>
+                                    <li><a href="{{ route('bills') }}"><h4 id="nav-bills">Add Bills</h4></a></li>
+                                    <li><a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            <h4>Logout</h4>
                                         </a>
+                                    </li>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
-                                </ul>
-                            </li>
+                                <!-- </ul> -->
+                            <!-- </li> -->
                         @endguest
                     </ul>
                 </div>

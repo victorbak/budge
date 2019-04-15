@@ -29,6 +29,8 @@ class PaidController extends Controller
         return view('paid.paid');
     }
 
+    //Add money to current budget
+
     public function update(Request $request)
     {
         $value = $request->post('paid');

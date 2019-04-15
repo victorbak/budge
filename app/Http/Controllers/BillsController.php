@@ -30,6 +30,8 @@ class BillsController extends Controller
         return view('bills.bills');
     }
 
+    //Add bills to list
+
     public function insert(Request $request)
     {
         $name = $request->post('name');

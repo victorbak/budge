@@ -1,17 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+<script>document.getElementById('nav-bills').style.fontWeight = "bold"</script>
+
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Paid</div>
+                    <div class="panel-heading"><h4>Add Bill</h4></div>
                     <div class="panel-body">
                         @if (session('status'))
                             <div class="alert alert-success">
                                 {{ session('status') }}
                             </div>
                         @endif
+                        <!-- Add bills form -->
                         <form method="post" action="{{route('bills.insert')}}">
                             <label>Add a bill.</label>
                                 <div class="input-group">
@@ -22,7 +25,7 @@
                             {{ csrf_field() }}
                             <br/>
                             <div>
-                                <input class="form-control btn btn-success" type="submit" value="Submit" style="width:100px;">
+                                <input class="form-control btn btn-success pull-right" type="submit" value="Submit" style="width:100px;">
                             </div>
                         </form>
                     </div>

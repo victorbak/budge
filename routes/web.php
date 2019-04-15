@@ -41,6 +41,7 @@ Route::get('bills', 'PayController@index')->name('pay');
 
 Route::get('/bills/pay/{id}', ['uses' =>'PayController@bills'])->name('pay.bills');
 
+Route::delete('/bills/pay/{id}', ['uses' =>'PayController@bills'])->name('pay.delete');
 
 
 

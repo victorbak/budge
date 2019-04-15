@@ -1,0 +1,47 @@
+.padding-heading {
+    font-size: 36px;
+}
+
+/* Registration and Login Views */
+.welcome {
+    width: 100%; 
+    text-align: center;
+    margin: 50px 0px;
+}
+
+.welcome h1 {
+    font-size: 50px;
+}
+
+/* Bills list view */
+.full-bill-row {
+    display: flex;
+    justify-content: space-between
+}
+
+#debt {
+    width: 100%;
+    text-align: center;
+}
+
+
+#cash {
+    font-size: 60px;
+    margin-bottom: 0;
+}
+
+.btn {
+    margin: 5px;
+}
+
+/* Home view */
+
+.row {
+    margin-top: 40px;
+}
+
+@media only screen and (max-width: 500px) {
+    #cash {
+        font-size: 40px;
+    }
+}

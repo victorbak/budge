@@ -31,6 +31,7 @@ class PayController extends Controller
         return view('list.list', compact('bills'));
     }
 
+    // Pay bills -- Subtract bill cost from total cash amount, delete bill from db
     public function bills($id)
     {
         $uId = Auth::id();
@@ -46,7 +47,21 @@ class PayController extends Controller
             ->where('id', $id)
             ->delete();
 
-        return view('home');
+        return redirect()->to('/bills');
     }
+
+        // Delete bill from db
+        public function delete($id)
+        {
+            $uId = Auth::id();
+    
+            $bill = Bill::find($id);
+    
+            DB::table('bills')
+                ->where('id', $id)
+                ->delete();
+    
+            return redirect()->to('/bills');
+        }
 
 }
